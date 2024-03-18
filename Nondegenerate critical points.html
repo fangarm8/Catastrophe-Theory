@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="generator" content="pandoc"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+        <meta name="author" content="Job Feldbrugge"/>
+        <title>Catastrophe Theory</title>
+        <style>
+            code {
+                white-space: pre-wrap;
+            }
+
+            span.smallcaps {
+                font-variant: small-caps;
+            }
+
+            span.underline {
+                text-decoration: underline;
+            }
+
+            div.column {
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+            }
+
+            div.hanging-indent {
+                margin-left: 1.5em;
+                text-indent: -1.5em;
+            }
+
+            ul.task-list {
+                list-style: none;
+            }
+        </style>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+        <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+        <link rel="icon" href="figures/icon.png" type="image/x-icon">
+        <div class="topnav">
+            <a href="https://jfeldbrugge.github.io/">Home</a>
+            <a href="https://jfeldbrugge.github.io/Projects-and-Codes/">Projects and Code</a>
+        </div>
+</head>
+<body>
+<h2 id="nondegenerate-critical-points">Nondegenerate critical points</h2>
+<p>
+    The classification of nondegenerate critical points is expressed by <strong>Morse lemma</strong>
+    , first proven by Marston Morse in 1934. Note that the theorem was already anticipated by Arthur Cayley (1859) and James Clerk Maxwell (1870) in the study of contour lines in topography.
+</p>
+<p>
+    <strong>Morse lemma:</strong>
+    <em>
+        Let <span class="math inline">\(f\)</span>
+        be a smooth function of <span class="math inline">\(n\)</span>
+        variables with a critical point at the origin with index <span class="math inline">\(s\)</span>
+        . The critical point is nondegenerate if and only if there exists a local diffeomorphism <span class="math inline">\(\psi\)</span>
+        which preserves the origin <span class="math inline">\(\psi(\boldsymbol{0})=\boldsymbol{0}\)</span>
+        for which
+    </em>
+</p>
+<p>
+    <span class="math display">\[f(\psi(\boldsymbol{x})) =f(\boldsymbol{0}) - x_1^2 - \dots - x_s^2 + x_{s+1}^2 + \dots + x_n^2\]</span>
+</p>
+<p>
+    <em>in the vicinity of the origin.</em>
+</p>
+<p>
+    <strong>Proof:</strong>
+    <em>
+        The Morse lemma can be proven using the diagonalization of symmetric matrices and the implicit function theory. I provide a detailed proof in the next section. One can also find a proof in chapter one of <a href="https://www.routledge.com/Catastrophe-Theory-Second-Edition/Castrigiano-Hayes/p/book/9780813341255">Catastrophe Theory</a>
+        by Domenico Castrigiano and Sandra Hayes.
+    </em>
+</p>
+<p>
+    In the one-dimensional case, the lemma states that any nondegenerate critical points at the origin is either locally equivalent to a maximum <span class="math inline">\(f =f(0) -x^2\)</span>
+    or a minimum <span class="math inline">\(f= f(0) + x^2\)</span>
+    (see figure 1).
+</p>
+<figure>
+    <table align="left" width="100%" id="FIG">
+        <tr>
+            <td>
+                <a href='figures/Maximum.png'>
+                    <img src='figures/Maximum.png' width=90%/>
+                </a>
+            </td>
+            <td>
+                <a href='figures/Minimum.png'>
+                    <img src='figures/Minimum.png' width=90%/>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <figcaption>Fig. 1 - An illustration the nondegenerate critical points of a one-dimensional function
+</figcaption>
+</figure>
+<p>
+    More generally, the lemma states that for nondegenerate critical points, there exist coordinates for which the function locally coincides with its second Taylor polynomial at the origin. The index of the Hessian matrix completely classifies the nondegenerate critical points of a smooth real-valued function on <span class="math inline">\(\mathbb{R}^n\)</span>
+    .
+</p>
+<p>
+    A function with only nondegenerate critical points is known as a <strong>Morse function.</strong>
+    Morse functions are dense in the space of smooth functions, <em>i.e.,</em>
+    a generic function only includes nondegenerate critical points and a degenerate critical point decomposes into nondegenerate ones upon an infinitesimal perturbation of the function. As such, Morse functions play a fundamental role in both mathematics and many applications. Given these observations, one might doubt the relevance of the classification of degenerate points. However, as it turns out, degenerate critical points do frequently occur in applications when considering a family of continuously varying functions. Catastrophe theory extends Morse lemma to degenerate critical points. It describes the possible equivalence classes, determines how many terms in the Taylor series are required to distinguish a critical point, and shows how a critical point <strong>unfolds</strong>
+    into nondegenerate critical points under a general perturbation.
+</p>
+<h2 id="catastrophe-theory">Catastrophe theory</h2>
+<p>
+    Consider a continuous family of smooth function <span class="math inline">\(f_\boldsymbol{u}:U \to \mathbb{R}\)</span>
+    with <span class="math inline">\(U\)</span>
+    a open subset of <span class="math inline">\(\mathbb{R}^n\)</span>
+    and with the external parameter <span class="math inline">\(\boldsymbol{u} = (u_1,u_2,\dots, u_d)\)</span>
+    . René Thom’s main theorem of catastrophe theory states that when the number of external parameters does not exceed four (<span class="math inline">\(d \leq 4\)</span>
+    ), each ‘stable’ degenerate critical point is equivalent to one of the <span class="math inline">\(\boldsymbol{7}\)</span>
+    elementary catastrophes
+</p>
+<p>
+    <span class="math display">\[x^3, x^4, x^5, x^6, x^3 + y^3, x^3 - x y^2, \text{ and } x^2 y + y^4,\]</span>
+</p>
+<p>
+    up to coordinate transformations. These elementary catastrophes are known as the <strong>fold, cusp, swallowtail, butterfly, elliptic umbilic, hyperbolic umbilic,</strong>
+    and <strong>parabolic umbilic</strong>
+    catastrophes. The second major theorem of catastrophe theory describes how these degenerate critical points decompose into nondegenerate ones upon small perturbations. The <strong>unfolding</strong>
+    of a critical point is <strong>versal</strong>
+    when it includes all the possible ways in which the degenerate critical can decompose. The unfolding is <strong>universal</strong>
+    when it is both versal and only uses a minimal number of parameters.
+</p>
+<p>Before describing the proofs of these theorems, we colloquially apply the theory to several physical toy models to introduce the relevant concepts.</p>
+</body>
+</html>
